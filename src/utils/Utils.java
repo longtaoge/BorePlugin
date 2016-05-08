@@ -300,4 +300,39 @@ public class Utils {
         sb.append("\n");
         return sb.toString();
     }
+
+
+
+
+    /**
+     * 把'_' 转换成驼峰
+     *
+     * @param filed
+     * @return
+     */
+
+    ;public static  String converFiled(String filed) {
+
+        String[] Strings = filed.split("_");
+        StringBuffer sb = new StringBuffer(Strings[0]);
+
+        for (int i = 1; i < Strings.length; i++) {
+            sb.append(toUpperCaseFirstOne(Strings[i]));
+
+        }
+        return sb.toString();
+
+    }
+
+    //首字母转大写
+    public static String toUpperCaseFirstOne(String s) {
+        if (Character.isUpperCase(s.charAt(0))) {
+            return s;
+        } else {
+            return (new StringBuilder()).append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
+        }
+
+    }
+
+
 }
